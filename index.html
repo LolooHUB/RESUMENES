@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Speckled Band Flashcards</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 40px;
+    }
+
+    .card {
+      background-color: #222;
+      border: 2px solid #555;
+      border-radius: 12px;
+      width: 400px;
+      padding: 20px;
+      text-align: center;
+      margin-bottom: 20px;
+      box-shadow: 0 0 10px #555;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+    }
+
+    .question {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .answer {
+      font-size: 18px;
+      margin-top: 10px;
+      display: none;
+      color: #0f0;
+    }
+
+    button {
+      background-color: #444;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background-color: #666;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card" onclick="toggleAnswer(0)">
+    <div class="question">Who asks Holmes for help?</div>
+    <div class="answer">Helen Stoner</div>
+  </div>
+
+  <div class="card" onclick="toggleAnswer(1)">
+    <div class="question">What did Julia say before dying?</div>
+    <div class="answer">"The speckled band!"</div>
+  </div>
+
+  <div class="card" onclick="toggleAnswer(2)">
+    <div class="question">Who is the killer and how does he kill?</div>
+    <div class="answer">Dr. Roylott; he uses a venomous snake.</div>
+  </div>
+
+  <div class="card" onclick="toggleAnswer(3)">
+    <div class="question">Why does Roylott want to kill his stepdaughters?</div>
+    <div class="answer">To keep their inheritance money.</div>
+  </div>
+
+  <div class="card" onclick="toggleAnswer(4)">
+    <div class="question">How does Holmes solve the case?</div>
+    <div class="answer">He discovers the snake and stops the murder.</div>
+  </div>
+
+  <button onclick="resetCards()">Hide All Answers</button>
+
+  <script>
+    function toggleAnswer(index) {
+      const answers = document.querySelectorAll('.answer');
+      answers[index].style.display = answers[index].style.display === 'block' ? 'none' : 'block';
+    }
+
+    function resetCards() {
+      const answers = document.querySelectorAll('.answer');
+      answers.forEach(answer => answer.style.display = 'none');
+    }
+  </script>
+
+</body>
+</html>
